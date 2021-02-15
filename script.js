@@ -2,9 +2,9 @@
 //modal
 let modal = document.getElementById("my_modal");//подложка модального окна
 let btn = document.getElementById("btn_modal_window");//кнопка открытия основного окна
-let closeModal = document.querySelector(".close_modal_window");//кнопка закрытия основного окна
+let closeModal = document.querySelector(".close-modal-window");//кнопка закрытия основного окна
 let modalEdit = document.getElementById("save-card");//подложка окна редактирования
-let closeEdit = document.querySelector(".close_edit_card")//кнопка закрытия окна редактирования
+let closeEdit = document.querySelector(".close-edit-card")//кнопка закрытия окна редактирования
 
 
 //открываем основное модальное окно
@@ -37,7 +37,7 @@ document.addEventListener("click", function(e){
 
 document.addEventListener("click", function(e){
    let parent = e.target.closest(".task-card");
-   if(e.target.closest("#edit")){
+   if(e.target.closest(".edit")){
       parent.classList.add('editable')
       modalEdit.style.display = "block";
       document.querySelector(".title-edit").value = parent.querySelector(".title-card").innerHTML;
@@ -178,8 +178,8 @@ function createCard( title, content, doneStatus, tags = {}){
          <div class="title-card">${title}</div>
          <div class="menu-card">
          <ul class="dropdown-menu">
-            <li id="edit" class="border-bottom">Edit...</li>
-            <li id="delete">Delete...</li>
+            <li class="ln edit border-bottom">Edit...</li>
+            <li class="ln delete">Delete...</li>
          </ul>
          </div>
       </div>
@@ -188,7 +188,7 @@ function createCard( title, content, doneStatus, tags = {}){
       <div class="done-task">
          <label class="task-custom card-done">
             <input type="checkbox" ${doneStatus} name="done">
-            <span class="card-done">Done</span>
+            <span class="ln card-done">Done</span>
          </label>
       </div>`
       newCard.querySelector(".card-done input").addEventListener('change', function(e){
@@ -290,7 +290,7 @@ let hideDone = document.querySelector(".hide-done input")
 
 document.addEventListener("click", function(e){
    let parent = e.target.closest(".task-card");
-   if(e.target.closest("#delete")){
+   if(e.target.closest(".delete")){
       parent.remove()
       localRefresh()
    }
@@ -340,5 +340,6 @@ document.addEventListener('DOMContentLoaded', function(){
       mainContainer.append(newCard);
 
    })
+   changeLang()
 
 })

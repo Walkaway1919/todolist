@@ -48,7 +48,10 @@ body{
 .add-card{
     cursor: pointer;
 }
-.close_modal_window, .close_edit_card{
+
+
+
+.close-modal-window, .close-edit-card{
     background: transparent;
     border: none !important;
     color: #777;
@@ -63,7 +66,12 @@ body{
     width: 100px;
     height: 35px;
     border-radius: 10px;
+    opacity: 0.8;
 }
+.add-modal:hover, .save-edit:hover {
+    opacity: 1;
+    transition: all 1s ease-out;
+  }
 .modal-title input{
     border: 0px;
     background-color: #f9f9f8;
@@ -107,17 +115,6 @@ body{
     height: 40px;
     border-radius: 10px;
     cursor: pointer;
-
-
-
-
-
-
-
-
-
-
-
 }
 .flex-container{
     display: flex;
@@ -137,6 +134,7 @@ body{
     color: #7e7c73;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 30;
     padding: 20px 30px 20px 15px;
 }
@@ -316,6 +314,7 @@ body{
     padding: 10px 25px;
     background: #fff9de;
     border: 1px solid #e8e8e8;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.1);
     min-height: 120px;
     height: auto;
     position: relative;
@@ -389,7 +388,9 @@ body{
     font-weight: 600;
 }
 .girl-picture{
+    position: absolute;
     padding-left: 15px;
+    bottom: 30px;
 }
 @media (max-width: 1000px) {
     .modal .modal-content, .save-content-card{
@@ -516,3 +517,57 @@ body{
     font-weight: 400;
     src: url("/font/AdobeClean-Regular.woff2") format("woff2")
   }
+
+
+.new-change-lang{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 102px;
+
+    margin-left: auto;
+    margin-right: 20px;
+}
+.new-change-lang__lang{
+    font-size: 12px;
+    width: 30px;
+    height: 20px;
+    line-height: 22px;
+
+    text-align: center;
+
+    cursor: pointer;
+    transition: 300ms linear all;
+    background-color: #fff;
+    color: #000;
+}
+.new-change-lang__toggler{
+    min-width: 42px;
+    width: 44px;
+    height: 24px;
+    border: 1px solid #777;
+    padding: 1px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 22px;
+    cursor: pointer;
+}
+.new-change-lang__toggler::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    position: absolute;
+    left: 1px;
+    top: 1px;
+
+    transition: 300ms linear all;
+    background:  rgba(148,187,233,1);
+    
+    border-radius: 100%;
+}
+.new-change-lang_active .new-change-lang__toggler::before{
+    background: rgba(238,174,202,1);
+    left: 20px;
+}
