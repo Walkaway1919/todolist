@@ -227,7 +227,7 @@ body{
 } */
 
 .hide-tasks{
-  padding: 30px 0px 0 10px;
+  padding: 10px 0px 0 20px;
 }
 
 .task-custom input{
@@ -570,4 +570,28 @@ body{
 .new-change-lang_active .new-change-lang__toggler::before{
     background: rgba(238,174,202,1);
     left: 20px;
+}
+[data-tooltip] {
+    position: relative; 
+   }
+[data-tooltip]::after {
+    content: attr(data-tooltip); 
+    position: absolute;
+    left: 0; top: 0;
+    display: inline-block;
+    background: #f7f7f7; 
+    padding: 0.5em; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    pointer-events: none; 
+    opacity: 0; 
+    transition: 1s;
+    border-radius: 5px;
+    color: #303846;
+    font-family: 'Adobe Clean';
+    height: 12px;
+    line-height: 12px;
+} 
+[data-tooltip]:hover::after {
+    opacity: 1;
+    top: 2em; 
 }

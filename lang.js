@@ -69,7 +69,27 @@ const langObj = {
     "save-change": {
         "ru": "Сохранить",
         "en": "Save",
-    }
+    },
+    "card-work" : {
+        mode: "data-tooltip",
+        "ru": "работа",
+        "en": "work",
+    },
+    "card-study" : {
+        mode: "data-tooltip",
+        "ru": "учеба",
+        "en": "study",
+    },
+    "card-entertaiment" : {
+        mode: "data-tooltip",
+        "ru": "досуг",
+        "en": "entertaiment",
+    },
+    "card-family" : {
+        mode: "data-tooltip",
+        "ru": "семья",
+        "en": "family",
+    },
 
 }
 // const select = document.querySelector('select');
@@ -86,7 +106,10 @@ const changeLang = () =>{
         document.querySelectorAll('.ln.' + key).forEach(function(el) {
             if( langObj[key].mode && langObj[key].mode === 'placeholder'){
                 el.placeholder = langObj[key][hash];
-            } else {
+            }if(langObj[key].mode && langObj[key].mode === 'data-tooltip'){
+                el.dataset.tooltip = langObj[key][hash];
+            }
+            else {
                 el.innerHTML = langObj[key][hash];
             }
         })
@@ -109,3 +132,11 @@ document.querySelector(".new-change-lang__toggler").addEventListener('click', fu
     location.href = window.location.pathname + "#" + (hash === 'en' ? 'ru' : 'en');
     changeLang()
 })
+
+document.onmouseover = function(event) {
+    let target = event.target;
+    let tooltipHtml = target.dataset.tooltip;
+    if (!tooltipHtml) return;
+    //console.log(window.location.hash.substr(1))
+
+  };

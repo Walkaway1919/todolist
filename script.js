@@ -94,22 +94,22 @@ document.addEventListener("click", function(e){
       let workStatus = modalEdit.querySelector(".work input").checked;
       if(workStatus){
          editableCard.classList.add('tag-work')
-         tagCloud.innerHTML += '<div class="card-work round"></div>';
+         tagCloud.innerHTML += '<div class="ln card-work round" data-tooltip="work"></div>';
       }
       let studyStatus = modalEdit.querySelector(".study input").checked;
       if(studyStatus){
          editableCard.classList.add('tag-study')
-         tagCloud.innerHTML += '<div class="card-study round"></div>';
+         tagCloud.innerHTML += '<div class="ln card-study round" data-tooltip="study"></div>';
       }
       let entertaimentStatus = modalEdit.querySelector(".entertaiment input").checked;
       if(entertaimentStatus){
          editableCard.classList.add('tag-entertaiment')
-         tagCloud.innerHTML += '<div class="card-entertaiment round"></div>';
+         tagCloud.innerHTML += '<div class="ln card-entertaiment round" data-tooltip="entertaiment"></div>';
       }
       let familyStatus = modalEdit.querySelector(".family input").checked;
       if(familyStatus){
          editableCard.classList.add('tag-family')
-         tagCloud.innerHTML += '<div class="card-family round"></div>';
+         tagCloud.innerHTML += '<div class="ln card-family round" data-tooltip="family"></div>';
       }
       modalEdit.style.display = "none"
       localRefresh()
@@ -154,19 +154,19 @@ function createCard( title, content, doneStatus, tags = {}){
    let newCard = document.createElement('div');
    if( isWork ) {
       cardClasses.push('tag-work')
-      tagsHtml += '<div class="card-work round"></div>';
+      tagsHtml += '<div class="ln card-work round" data-tooltip="work"></div>';
    }
    if( isStudy ) {
       cardClasses.push('tag-study')
-      tagsHtml += '<div class="card-study round"></div>'
+      tagsHtml += '<div class="ln card-study round" data-tooltip="study"></div>'
    }
    if( isEntertaiment ) {
       cardClasses.push('tag-entertaiment')
-      tagsHtml += '<div class="card-entertaiment round"></div>'
+      tagsHtml += '<div class="ln card-entertaiment round" data-tooltip="entertaiment"></div>'
    }
    if( isFamily ) {
       cardClasses.push('tag-family')
-      tagsHtml += '<div class="card-family round"></div>'
+      tagsHtml += '<div class="ln card-family round" data-tooltip="family"></div>'
    }   
    if( doneStatus === 'checked' ) {
       cardClasses.push('closed')
