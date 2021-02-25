@@ -7,6 +7,8 @@ body{
     display: flex;
     flex-direction: column;
     align-content: stretch;
+    overflow-x: hidden;
+    position: relative;
 
 }
 
@@ -299,7 +301,7 @@ body{
 
 .main{
     display: flex;
-    flex-grow: 2;
+    /* flex-grow: 2; */
     justify-content: space-between;
     flex-wrap: wrap;
     padding-right: 15px;
@@ -308,10 +310,13 @@ body{
     
     width: 100%;
 }
+.card-filler,
 .task-card {
-    flex: 1 1 200px;
+    /* flex: 1 1 200px; */
+    width: calc( 99% / 3 - 30px);
     margin: 20px 15px 15px 15px;
     padding: 10px 25px;
+    box-sizing: border-box;
     background: #fff9de;
     border: 1px solid #e8e8e8;
     box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.1);
@@ -319,6 +324,14 @@ body{
     height: auto;
     position: relative;
     border-radius: 3px;
+}
+.task-card.cloned{
+    position: absolute;
+    opacity: 0.3;
+    pointer-events: none;
+}
+.card-filler{
+    background-color: rgba(255,0,0,0.3);
 }
 .menu-card{
     cursor: pointer;
@@ -426,8 +439,18 @@ body{
       }
 }
   @media (min-width: 600px) and (max-width: 1199px) {
+    .card-filler,
     .task-card {
-      width: 50%;
+      width: calc( 50% - 30px);
+    }
+
+  }
+  @media screen and (max-width: 600px) {
+    .card-filler,
+    .task-card {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
     }
 
   }
@@ -457,13 +480,6 @@ body{
     .modal-tags ul li{
         margin: 0 10px 0 0;
         font-size: 12px;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .task-card {
-      width: 32%;
-      max-width: 400px;
     }
   }
 
@@ -594,4 +610,9 @@ body{
 [data-tooltip]:hover::after {
     opacity: 1;
     top: 2em; 
+}
+
+
+.drag-card{
+    cursor: move;
 }
