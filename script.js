@@ -356,20 +356,11 @@ const dragObject = {
       if( !element ) return this.hover[0]
       const leftRange = element.offsetLeft + element.offsetWidth / 2
       const topRange = element.offsetTop + element.offsetHeight / 2
-
      
-     if( window.width > 599 ){
-
-        if( posX > leftRange ){
-           return 'right'
-         }
-         return 'left'
+      if( window.innerWidth > 599 ){
+         return posX > leftRange ? 'right' : 'left'
       } else {
-         
-        if( posY > topRange ){
-         return 'right'
-       }
-       return 'left'
+         return posY > topRange ? 'right' : 'left'
       }
    },
    drag: function(e) {
@@ -383,7 +374,9 @@ const dragObject = {
       // console.log('movement', this)
 
       const hoveredCard = e.target.closest(".task-card")
-      const hoveredPos = this.calcPosition( hoveredCard, [e.pageX, e.pageX])
+      const hoveredPos = this.calcPosition( hoveredCard, [e.pageX, e.pageY])
+      console.log(hoveredCard, hoveredPos)
+
 
       this.cloned.style.left = e.pageX - 40 + 'px'
       this.cloned.style.top = e.pageY - 40 + 'px'

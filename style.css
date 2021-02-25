@@ -73,7 +73,7 @@ body{
 .add-modal:hover, .save-edit:hover {
     opacity: 1;
     transition: all 1s ease-out;
-  }
+}
 .modal-title input{
     border: 0px;
     background-color: #f9f9f8;
@@ -329,6 +329,7 @@ body{
     position: absolute;
     opacity: 0.3;
     pointer-events: none;
+    cursor: grabbing;
 }
 .card-filler{
     background-color: rgba(255,0,0,0.3);
@@ -614,5 +615,5 @@ body{
 
 
 .drag-card{
-    cursor: move;
+    cursor: grab;
 }

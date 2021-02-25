@@ -101,7 +101,7 @@ const langs = ["ru", "en"]
 // })
 
 const changeLang = () =>{
-    let hash = window.location.hash.substr(1);
+    let hash = window.location.hash.substr(1) || 'en';
     for(let key in langObj){
         document.querySelectorAll('.ln.' + key).forEach(function(el) {
             if( langObj[key].mode && langObj[key].mode === 'placeholder'){
@@ -120,7 +120,6 @@ const changeLang = () =>{
         document.querySelector(".new-change-lang").classList.add('new-change-lang_active')
     }
 }
-changeLang()
 
 document.querySelectorAll(".new-change-lang__lang").forEach( el => el.addEventListener('click', function(e){
     let lang = e.target.dataset.lang;
@@ -139,4 +138,4 @@ document.onmouseover = function(event) {
     if (!tooltipHtml) return;
     //console.log(window.location.hash.substr(1))
 
-  };
+};
