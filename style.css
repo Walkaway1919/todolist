@@ -124,6 +124,10 @@ body{
     min-height: calc(100vh - 100px);
     padding: 0 30px 30px;
     box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1280px;
+    box-sizing: border-box;
 }
 
 .modal-flex{
@@ -133,6 +137,8 @@ body{
 }
 
 .header {
+    width: 100%;
+    margin: 0 auto;
     max-width: 1280px;
     height: 60px;
     color: #7e7c73;
@@ -141,6 +147,7 @@ body{
     align-items: center;
     font-size: 30;
     padding: 20px 30px;
+    box-sizing: border-box;
 }
 .aside{
     flex-grow: 2;
