@@ -28,8 +28,18 @@ header strong{
     font-size: 50px;
     font-weight: bold;
 }
+.name{
+    border: 0px;
+    background-color: #cccccc;
+    height: 35px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    font-family: 'Adobe Clean';
+}
+
 img{
-    width: 400px;
+    width: 100%;
 }
 .add-modal{
     background-color: #69665C;
@@ -67,9 +77,18 @@ main{
 
 footer{
     margin-bottom: 50px;
+    min-width: 240px;
+    max-width: 420px;
+    padding: 0 10px;
+}
+.card3d{
+    width: 100%;
+    height: 130px;
+    perspective: 500px;
+    transform-style: preserve-3d;
 }
 .task-card {
-    width: 400px;
+    width: 100%;
     background: #fff9de;
     border: 1px solid #e8e8e8;
     box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.1);
@@ -77,6 +96,9 @@ footer{
     height: auto;
     border-radius: 3px;
     padding: 15px;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: 0.2s linear all;
 }
 
 .description-card{
@@ -116,7 +138,6 @@ footer{
     text-decoration: line-through;
 }
 .menu-card{
-    cursor: pointer;
     color: #B2AFA1;
     min-width: 20px;
     width: 20px;
@@ -135,7 +156,6 @@ footer{
 }
 
 .task-custom span{
-    cursor: pointer;
     color: #777;
     display: flex;
     padding-left: 30px;
@@ -177,4 +197,22 @@ footer{
     transform: translateY(-55%) translateX(25%) rotate(-50deg);
 }
 
+.loaded{
+    animation: pageLoaded 3s linear infinite;
+}
 
+@keyframes pageLoaded{
+    0%{ transform: scale(1);}
+    10%{ transform: scale(1.05);}
+    20%{ transform: scale(1);}
+    30%{ transform: scale(1.1);}
+    40%{ transform: scale(1);}
+    100%{ transform: scale(1);}
+}
+
+
+
+
+    
+
+  

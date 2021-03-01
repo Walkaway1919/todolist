@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/Papirus-Team-Papirus-Apps-Gnome-todo.ico" type="image/x-icon">
+</head>
+<body>
+      <div id="my_modal" class="modal">
+        <div class="modal-content">
+            <div class="add">
+                <button class="ln close-modal-window">Cancel</button>
+                <button class="ln add-modal">Add</button>
+            </div>
+                <div class="modal-title modal-flex">
+                    <span class="ln title">Title</span>
+                    <input type="text" size="40" class="modal-input ln title-input" placeholder="add a title...">
+                </div>
+                <div class="modal-description modal-flex">
+                    <span class="ln description">Description</span>
+                    <textarea name="" id="" cols="30" rows="10" class="modal-textarea ln description-textarea" placeholder="add a description..." ></textarea>
+                </div>
+            <div class="modal-tags"><span class="ln tags">Tags</span>
+                <div class="modal-nav tags">
+                    <label class="nav__elem work tags">
+                        <input type="checkbox" id="add-work">
+                        <span class="ln work">work</span>
+                    </label>
+                    
+                    <label class="nav__elem study tags">
+                        <input type="checkbox" id="add-study">
+                        <span class="ln study">study</span>
+                    </label>
+                    <label class="nav__elem entertaiment tags">
+                        <input type="checkbox" id="add-entertaiment">
+                        <span class="ln entertaiment">entertaiment</span>
+                    </label>
+                    <label class="nav__elem family tags">
+                        <input type="checkbox" id="add-family">
+                        <span class="ln family">family</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div id="save-card" class="modal">
+        <div class="save-content-card">
+            <div class="save">
+                <button class="close-edit-card ln close-modal-window">Cancel</button>
+                <button class="save-edit ln save-change">Save</button>
+            </div>
+                <div class="modal-title modal-flex">
+                    <span class="ln title">Title</span>
+                    <input type="text" size="40" class="title-edit ln title-input" placeholder="add a title...">
+                </div>
+                <div class="modal-description modal-flex">
+                    <span class="ln description">Description</span>
+                    <textarea name="" id="" cols="30" rows="10" class="description-edit ln description-textarea" placeholder="add a description..." ></textarea>
+                </div>
+            <div class="modal-tags"><span class="ln tags">Tags</span>
+                <div class="modal-nav tags">
+                    <label class="nav__elem work tags">
+                        <input type="checkbox" id="add-work">
+                        <span class="ln work">work</span>
+                    </label>
+                    <label class="nav__elem study tags">
+                        <input type="checkbox" id="add-study">
+                        <span class="ln study">study</span>
+                    </label>
+                    <label class="nav__elem entertaiment tags">
+                        <input type="checkbox" id="add-entertaiment">
+                        <span class="ln entertaiment">entertaiment</span>
+                    </label>
+                    <label class="nav__elem family tags">
+                        <input type="checkbox" id="add-family">
+                        <span class="ln family">family</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+      </div>
+    <header class="header">
+        <div class="todo">todo</div>
+        <div class="new-change-lang">
+            <span class="new-change-lang__lang" data-lang='en'>ENG</span>
+            <span class="new-change-lang__toggler"></span>
+            <span class="new-change-lang__lang" data-lang='ru'>RU</span>
+        </div>
+        <div class="add-card" id="btn_modal_window">+</div>
+    </header>
+    <div class="flex-container">
+        <aside class="aside flex-grow-1">
+            <ul class="nav">
+                <li class="nav__elem ln work" data-filter="work">work</li>
+                <li class="nav__elem ln study" data-filter="study">study</li>
+                <li class="nav__elem ln entertaiment" data-filter="entertaiment">entertaiment</li>
+                <li class="nav__elem ln family" data-filter="family">family</li>
+                <li class="nav__elem ln notag" data-filter="notag">notag</li>
+            </ul>
+            <div class="hide-tasks">
+                <label class="task-custom hide-done">
+                    <input id="hide-done-cards" type="checkbox" name="hide">
+                    <span class="ln hide-done-task">Hide completed tasks</span>
+                </label>
+            </div>
+            <div class="girl-picture">
+                <img src="/img/girl.png" alt="">
+            </div>
+        </aside>
+        <main class="main flex-grow-3">
+        </main>
+    </div>
+    <script src="app.js"></script>
+    <script src="gragger.js"></script>
+    <script src="lang.js"></script>
+</body>
+</html>

@@ -310,6 +310,13 @@ body{
     
     width: 100%;
 }
+.main:after{
+    content: "";
+    width: calc( 99% / 3 - 30px);
+    height: 0;
+    margin: 0 15px 0 15px;
+    box-sizing: border-box;
+}
 .card-filler,
 .task-card {
     /* flex: 1 1 200px; */
@@ -325,6 +332,9 @@ body{
     position: relative;
     border-radius: 3px;
 }
+.task-card.closed{
+    text-decoration: line-through;
+}
 .task-card.cloned{
     position: absolute;
     opacity: 0.3;
@@ -332,7 +342,7 @@ body{
     cursor: grabbing;
 }
 .card-filler{
-    background-color: rgba(255,0,0,0.3);
+    background-color: #ffcece;
 }
 .menu-card{
     cursor: pointer;
@@ -615,5 +625,12 @@ body{
 
 
 .drag-card{
+    background-color: #fff9de;
     cursor: grab;
+    background-image: url('/img/drag.png');
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    background-blend-mode: multiply;
+    
 }

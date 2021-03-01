@@ -131,11 +131,3 @@ document.querySelector(".new-change-lang__toggler").addEventListener('click', fu
     location.href = window.location.pathname + "#" + (hash === 'en' ? 'ru' : 'en');
     changeLang()
 })
-
-document.onmouseover = function(event) {
-    let target = event.target;
-    let tooltipHtml = target.dataset.tooltip;
-    if (!tooltipHtml) return;
-    //console.log(window.location.hash.substr(1))
-
-};
