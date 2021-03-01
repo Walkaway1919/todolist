@@ -146,6 +146,7 @@ body{
     flex-grow: 2;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     align-items: top;
     justify-content: space-between;
     width: 300px;
@@ -229,6 +230,7 @@ body{
 } */
 
 .hide-tasks{
+    margin-top: auto;
   padding-top: 10px;
 }
 
@@ -410,9 +412,7 @@ body{
     font-weight: 600;
 }
 .girl-picture{
-    position: absolute;
-    padding-left: 15px;
-    bottom: 30px;
+    padding-top: 20px;
 }
 @media (max-width: 1000px) {
     .modal .modal-content, .save-content-card{
@@ -483,6 +483,9 @@ body{
     }
   }
   @media(max-width: 850px){
+    .modal-nav{
+        flex-wrap: wrap;
+    }
     .modal .modal-content, .save-content-card {
         width: 65%;
     }
@@ -551,8 +554,8 @@ body{
 }
 @media (max-width: 440px) {
     .nav__elem{
-        max-width: 50%;
-        width: 50%;
+        max-width: calc( 50% - 30px );
+        width: calc( 50% - 30px );
     }
     .nav{
         flex-wrap: wrap;
