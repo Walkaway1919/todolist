@@ -284,7 +284,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 document.querySelectorAll(".new-change-lang__lang").forEach( el => el.addEventListener('click', function(e){
    let lang = e.target.dataset.lang;
-   // location.href = window.location.pathname + "#" + lang;
    localStorage.setItem('lang', lang)
    changeLang()
 }))
@@ -292,7 +291,6 @@ document.querySelectorAll(".new-change-lang__lang").forEach( el => el.addEventLi
 
 document.querySelector(".new-change-lang__toggler").addEventListener('click', function(e){
    let hash = localStorage.getItem('lang') || 'en';
-   // location.href = window.location.pathname + "#" + (hash === 'en' ? 'ru' : 'en');
    localStorage.setItem('lang', (hash === 'en' ? 'ru' : 'en'))
    changeLang()
 })

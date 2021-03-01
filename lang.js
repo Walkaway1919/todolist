@@ -110,13 +110,15 @@ const langObj = {
         "ru": "первый шаг к лучшей жизни",
         "en": "the first step for better life",
     },
-    "start-app": {
+    "start-name": {
         mode: "placeholder",
         "ru": "Как вас зовут?",
         "en": "What's your name?",
     },
 
 }
+
+const langs = ["ru", "en"]
 
 const changeLang = (old = true) =>{
     // let hash = window.location.hash.substr(1) || 'en';

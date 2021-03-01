@@ -28,7 +28,7 @@ header strong{
     font-size: 50px;
     font-weight: bold;
 }
-.start-app{
+.start-name{
     border: none;
     background-color: #cccccc;
     height: 35px;
@@ -36,6 +36,9 @@ header strong{
     padding: 20px;
     margin-top: 10px;
     font-family: 'Adobe Clean';
+}
+.start-name:focus{
+    outline: none;
 }
 .lang-chooser{
     margin-top: 10px;

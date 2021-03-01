@@ -1,11 +1,11 @@
 const card3d = document.querySelector(".card3d");
 const taskCard = document.querySelector(".task-card");
-const nameInpeut = document.querySelector(".name")
+const nameInput = document.querySelector(".start-name")
 
-nameInpeut.addEventListener("change", function(){
-    localStorage.setItem('name', nameInpeut.value);
+nameInput.addEventListener("change", function(){
+    localStorage.setItem('name', nameInput.value);
 })
-var localValue = localStorage.getItem('name')
+const localValue = localStorage.getItem('name')
 // if( localStorage.getItem("name") ){
 //     window.location.replace(window.location + "app.html");
 // }
