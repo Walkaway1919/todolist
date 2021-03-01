@@ -563,7 +563,7 @@ body{
     font-family: "Adobe Clean";
     font-style: normal;
     font-weight: 400;
-    src: url("/font/AdobeClean-Regular.woff2") format("woff2")
+    src: url("font/AdobeClean-Regular.woff2") format("woff2")
   }
 
 

@@ -81,12 +81,16 @@ img{
     width: 100%;
 }
 .start-app{
+    display: inline-block;
+    text-decoration: none;
     background-color: #69665C;
     cursor: pointer;
     border: none;
     color: white;
     width: 100px;
     height: 35px;
+    line-height: 38px;
+    text-align: center;
     border-radius: 10px;
     opacity: 0.8;
     margin-top: 15px;
