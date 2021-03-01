@@ -95,8 +95,8 @@ const langObj = {
         "en": "Get started",
     },
     "plan": {
-        "ru": "Упорядочь свою жизнь!",
-        "en": "Plan your life!",
+        "ru": "Приведи жизнь в порядок",
+        "en": "Plan your life",
     },
     "start-card-done": {
         "ru": "Готово!",
