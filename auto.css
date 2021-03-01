@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Adobe Clean";
-    src: url("/font/AdobeClean-Regular.woff2") format("woff2");
+    src: url("font/AdobeClean-Regular.woff2") format("woff2");
 }
 @font-face {
     font-family: "Adobe Clean";
     font-weight: bold;
-    src: url("/font/AdobeClean-Bold.woff2") format("woff2");
+    src: url("font/AdobeClean-Bold.woff2") format("woff2");
 }
 *{
     box-sizing: border-box;    
@@ -71,10 +71,10 @@ header strong{
 }
 
 .lang-chooser__input_en + span{
-    background-image: url('/img/uk.png');
+    background-image: url('img/uk.png');
 }
 .lang-chooser__input_ru + span{
-    background-image: url('/img/ru.png');
+    background-image: url('img/ru.png');
 }
 
 img{
@@ -185,7 +185,7 @@ footer{
     min-width: 20px;
     width: 20px;
     height: 20px;
-    background-image: url('/img/points.png');
+    background-image: url('img/points.png');
     background-repeat: no-repeat;
 }
 

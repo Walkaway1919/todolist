@@ -348,7 +348,7 @@ body{
     min-width: 20px;
     width: 20px;
     height: 20px;
-    background-image: url('/img/points.png');
+    background-image: url('img/points.png');
     background-repeat: no-repeat;
 }
 .dropdown-menu{
@@ -648,7 +648,7 @@ body{
 .drag-card{
     background-color: #fff9de;
     cursor: grab;
-    background-image: url('/img/drag.png');
+    background-image: url('img/drag.png');
     min-width: 20px;
     width: 20px;
     height: 20px;
