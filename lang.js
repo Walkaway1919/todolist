@@ -109,16 +109,14 @@ const langObj = {
     "description-card": {
         "ru": "первый шаг к лучшей жизни",
         "en": "the first step for better life",
-    }
+    },
+    "start-app": {
+        mode: "placeholder",
+        "ru": "Как вас зовут?",
+        "en": "What's your name?",
+    },
 
 }
-// const select = document.querySelector('select');
-const langs = ["ru", "en"]
-// select.addEventListener('change', function(){
-//     let lang = select.value;
-//     location.href = window.location.pathname + "#" + lang;
-//     changeLang()
-// })
 
 const changeLang = (old = true) =>{
     // let hash = window.location.hash.substr(1) || 'en';
