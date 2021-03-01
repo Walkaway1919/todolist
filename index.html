@@ -15,23 +15,29 @@
         <strong class="fourth-letter">o</strong>
     </header>
     <main>
-        <p>Plan your life!</p>
+        <p class="ln plan">Plan your life!</p>
         <div class="lang-chooser">
-            <input class="lang-chooser__en" type="radio" name="lang"> en
-            <input class="lang-chooser__ru" type="radio" name="lang"> ru
+            <label class="lang-chooser__el">
+                <input class="lang-chooser__input lang-chooser__input_en" type="radio" name="lang">
+                <span></span>
+            </label>
+            <label class="lang-chooser__el">
+                <input class="lang-chooser__input lang-chooser__input_ru" type="radio" name="lang">
+                <span></span>
+            </label>
         </div>
         <input type="text" placeholder="What's your name?" class="name">
-        <button class="ln add-modal" onClick='location.href="/app.html"'>Get Started</button>
+        <button class="ln start-app" onClick='location.href="/app.html"'>Get Started</button>
     </main>
     <footer>
         <img src="./img/three.png" alt="">
         <div class="card3d">
             <div class="task-card">
                 <div class="card-header">
-                    <div class="title-card">Download todo app</div>
+                    <div class="ln title-card">Download todo app</div>
                     <div class="menu-card"></div>
                 </div>
-                <div class="description-card">the first step for better life</div>
+                <div class="ln description-card">the first step for better life</div>
                 <div class="card-footer">
                     <div class="tags-card">
                         <div class="card-study round"></div>
@@ -42,14 +48,14 @@
                     <div class="done-task">
                     <label class="task-custom card-done">
                         <input type="checkbox" name="done" disabled="disabled" checked> 
-                        <span class="ln card-done">Done</span>
+                        <span class="ln start-card-done">Done</span>
                     </label>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- <script src="./lang.js"></script> -->
+    <script src="./lang.js"></script>
     <script src="./index.js"></script>
     </body>
 </html>

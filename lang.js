@@ -20,7 +20,7 @@ const langObj = {
         "en": "family",
     },
     "notag" : {
-        "ru": "без категорий",
+        "ru": "без тега",
         "en": "notag",
     },
     "close-modal-window" : {
@@ -90,6 +90,26 @@ const langObj = {
         "ru": "семья",
         "en": "family",
     },
+    "start-app" : {
+        "ru": "Начать",
+        "en": "Get started",
+    },
+    "plan": {
+        "ru": "Упорядочь свою жизнь!",
+        "en": "Plan your life!",
+    },
+    "start-card-done": {
+        "ru": "Готово!",
+        "en": "Done!",
+    },
+    "title-card": {
+        "ru": "Поставить приложение todo",
+        "en": "Download todo app",
+    },
+    "description-card": {
+        "ru": "первый шаг к лучшей жизни",
+        "en": "the first step for better life",
+    }
 
 }
 // const select = document.querySelector('select');
@@ -100,8 +120,9 @@ const langs = ["ru", "en"]
 //     changeLang()
 // })
 
-const changeLang = () =>{
-    let hash = window.location.hash.substr(1) || 'en';
+const changeLang = (old = true) =>{
+    // let hash = window.location.hash.substr(1) || 'en';
+    const hash = localStorage.getItem('lang') || 'en';
     for(let key in langObj){
         document.querySelectorAll('.ln.' + key).forEach(function(el) {
             if( langObj[key].mode && langObj[key].mode === 'placeholder'){
@@ -114,20 +135,19 @@ const changeLang = () =>{
             }
         })
     }
-    if( hash === 'en' ){
-        document.querySelector(".new-change-lang").classList.remove('new-change-lang_active')
+
+    if( old ){
+        if( hash === 'en' ){
+            document.querySelector(".new-change-lang").classList.remove('new-change-lang_active')
+        } else {
+            document.querySelector(".new-change-lang").classList.add('new-change-lang_active')
+        }
     } else {
-        document.querySelector(".new-change-lang").classList.add('new-change-lang_active')
+        if( hash === 'en' ){
+            document.querySelector(".lang-chooser__en").checked = true
+        } else {
+            document.querySelector(".lang-chooser__ru").checked = true
+        }
     }
 }
 
-document.querySelectorAll(".new-change-lang__lang").forEach( el => el.addEventListener('click', function(e){
-    let lang = e.target.dataset.lang;
-    location.href = window.location.pathname + "#" + lang;
-    changeLang()
-}))
-document.querySelector(".new-change-lang__toggler").addEventListener('click', function(e){
-    let hash = window.location.hash.substr(1);
-    location.href = window.location.pathname + "#" + (hash === 'en' ? 'ru' : 'en');
-    changeLang()
-})
