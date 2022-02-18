@@ -90,28 +90,34 @@
         </div>
         <div class="add-card" id="btn_modal_window">+</div>
     </header>
-    <div class="flex-container">
-        <aside class="aside flex-grow-1">
-            <ul class="nav">
-                <li class="nav__elem ln work" data-filter="work">work</li>
-                <li class="nav__elem ln study" data-filter="study">study</li>
-                <li class="nav__elem ln entertaiment" data-filter="entertaiment">entertaiment</li>
-                <li class="nav__elem ln family" data-filter="family">family</li>
-                <li class="nav__elem ln notag" data-filter="notag">notag</li>
-            </ul>
-            <div class="hide-tasks">
-                <label class="task-custom hide-done">
-                    <input id="hide-done-cards" type="checkbox" name="hide">
-                    <span class="ln hide-done-task">Hide completed tasks</span>
-                </label>
-            </div>
-            <div class="girl-picture">
-                <img src="img/girl.png" alt="">
-            </div>
-        </aside>
-        <main class="main flex-grow-3">
-        </main>
-    </div>
+    <main>
+        <div class="flex-container">
+            <aside class="aside flex-grow-1">
+                <ul class="nav">
+                    <li class="nav__elem ln work" data-filter="work">work</li>
+                    <li class="nav__elem ln study" data-filter="study">study</li>
+                    <li class="nav__elem ln entertaiment" data-filter="entertaiment">entertaiment</li>
+                    <li class="nav__elem ln family" data-filter="family">family</li>
+                    <li class="nav__elem ln notag" data-filter="notag">notag</li>
+                </ul>
+            </aside>
+            <section class="section flex-grow-3">
+            </section>
+    
+        </div>
+        <div class="hide-tasks">
+            <label class="task-custom hide-done">
+                <input id="hide-done-cards" type="checkbox" name="hide">
+                <span class="ln hide-done-task">Hide completed tasks</span>
+            </label>
+        </div>
+    </main>
+    <footer>
+        <div class="girl-picture">
+            <img src="img/girl.png" alt="">
+        </div>
+            <img class="bin-picture" src="img/bin.png" alt="">
+    </footer>
     <script src="app.js"></script>
     <script src="dragger.js"></script>
     <script src="lang.js"></script>

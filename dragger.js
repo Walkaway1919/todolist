@@ -1,8 +1,14 @@
 const filler = document.createElement("div")
+const bin = document.querySelector('.bin-picture');
 filler.classList.add("card-filler")
+
+bin.addEventListener('click', function(){
+   alert(1)
+})
 
 const dragObject = {
    filler: filler,
+   shouldDelete: false,
    element: null,
    cloned: null,
    dragger: null,
@@ -19,12 +25,26 @@ const dragObject = {
       }
    },
    drag: function(e) {
+      if( e.target.closest(".bin-picture")) {
+         this.shouldDelete = true
+         return;
+      } else {
+         this.shouldDelete = false
+      }
+
       if( !this.cloned ){
          this.cloned = this.element.cloneNode(true)
          this.cloned.classList.add('cloned')
-         this.element.closest(".main").append( this.cloned )
+         this.element.closest(".main")?.append( this.cloned )
       }
-      this.element.style.display = 'none'
+      requestAnimationFrame(() => {
+         this.element.style.pointerEvents = 'none';
+         this.element.style.position = 'absolute';
+         this.element.style.top = e.pageY+'px';
+         this.element.style.left = e.pageX + 'px';
+         this.element.style.transform = 'scale(0.7) translate(-150px, -80px)';
+      })
+
       
       const hoveredCard = e.target.closest(".task-card")
       const hoveredPos = this.calcPosition( hoveredCard, [e.pageX, e.pageY])
@@ -50,8 +70,16 @@ const dragObject = {
    unDrag(){
       if( this.element ){
          document.removeEventListener('mousemove', this.dragger)
-         this.moveCard( this.element )
-         this.element.style.display = 'block'
+         if( this.shouldDelete) {
+            this.element.remove();
+         } else {
+            this.moveCard( this.element )
+            this.element.style.position = 'static';
+            this.element.style.top = 0;
+            this.element.style.left = 0;
+            this.element.style.transform = 'none';
+         }
+         console.dir( this.element )
          this.filler.remove()
          this.cloned.remove()
          this.element = null
@@ -64,6 +92,7 @@ const dragObject = {
       }
    }
 }
+
 document.addEventListener('mousedown', function(e){
    const dragElem = e.target.closest(".drag-card")
    if( dragElem ){
@@ -78,4 +107,5 @@ document.addEventListener('mousedown', function(e){
 document.addEventListener('mouseup', function(e){
    dragObject.unDrag.apply(dragObject)
 })
+
 

@@ -7,7 +7,7 @@ const closeEdit = document.querySelector(".close-edit-card")//кнопка за�
 const save = document.querySelector(".save-edit");
 
 const add = document.querySelector(".add-modal")
-const mainContainer = document.querySelector(".main")
+const mainContainer = document.querySelector(".section")
 const card = document.querySelector(".task-card");
 const hideDone = document.querySelector(".hide-done input")
 
@@ -50,13 +50,14 @@ const app = {
       localStorage.setItem('todoList', JSON.stringify( cardList ) )
    },
    // создает карточку из данных
-   createCard( title, content, doneStatus, tags = {}){
+   createCard( title, content , doneStatus, tags = {}){
       const { isWork = false, isStudy = false, isEntertaiment = false, isFamily = false } = tags
       const cardClasses = ['task-card']
       if( doneStatus === 'checked' ) cardClasses.push('closed')
       
       const tagsHtml = [];
       const newCard = document.createElement('div');
+      newCard.setAttribute('draggable', true)
       if( isWork ) {
          cardClasses.push('tag-work')
          tagsHtml.push('<div class="ln card-work round" data-tooltip="work"></div>')
@@ -76,16 +77,25 @@ const app = {
 
       newCard.className = cardClasses.join(" ");
       newCard.innerHTML = `<div class="card-header">
-            <div class="drag-card"></div>
+            <div class="drag-card" drageble=true>
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                  <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+                  <g><g><path d="M560.8,191.3v246.9h245V315.8L990,500L805.8,684.2V558.9h-245v246.9h123.4L500,990L315.8,805.8h122.5V558.9h-245v124.4L10,500l183.3-183.3v121.5h245V191.3H318.6L500,10l181.4,181.3H560.8L560.8,191.3z"/></g></g>
+               </svg>
+            </div>
             <div class="title-card">${title}</div>
             <div class="menu-card">
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                  <metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+                  <g><path d="M777,458c0-34.8,28.7-63,63.9-63h85.2c35.3,0,63.9,28.3,63.9,63v84c0,34.8-28.7,63-63.9,63h-85.2c-35.3,0-63.9-28.3-63.9-63V458L777,458z M393.5,458c0-34.8,28.7-63,63.9-63h85.2c35.3,0,63.9,28.3,63.9,63v84c0,34.8-28.7,63-63.9,63h-85.2c-35.3,0-63.9-28.3-63.9-63V458L393.5,458z M10,458c0-34.8,28.7-63,63.9-63h85.2c35.3,0,63.9,28.3,63.9,63v84c0,34.8-28.7,63-63.9,63H73.9C38.6,605,10,576.7,10,542V458L10,458z"/></g>
+               </svg>
             <ul class="dropdown-menu">
                <li class="ln edit border-bottom">Edit...</li>
                <li class="ln delete">Delete...</li>
             </ul>
             </div>
          </div>
-         <div class="description-card">${content}</div>
+         <div class="description-card">${content||'познать дзен'}</div>
          <div class="tags-card">${tagsHtml.join("")}</div>
          <div class="done-task">
             <label class="task-custom card-done">
